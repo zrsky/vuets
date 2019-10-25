@@ -9,9 +9,8 @@ import { Commit } from 'vuex';
 import { appRouter } from '../../router'
 
 const state: any = {
-  menuList: [{
-      name: 'zhang'
-  }],
+  menuList: [],
+  cachePage: []
 };
 
 const mutations: any = {

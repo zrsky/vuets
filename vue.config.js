@@ -100,6 +100,8 @@ module.exports = {
         config.resolve.symlinks(true)
 
         config.resolve.alias
+            .set('_c', resolve('src/components'))
+            .set('_v', resolve('src/views'))
             .set('@', resolve('src'))
     }
 }

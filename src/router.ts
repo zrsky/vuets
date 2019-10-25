@@ -27,15 +27,32 @@ export const otherRouter = [{
 },]
 
 export const appRouter = [{
-  path: '/about',
-  name: 'about',
+  path: '/config',
   icon: 'plus-circled',
   title: '配置管理',
-  // route level code-splitting
-  // this generates a separate chunk (about.[hash].js) for this route
-  // which is lazy-loaded when the route is visited.
-  component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
-  children: []
+  name: 'merchant',
+  component: Home,
+  children: [{
+    path: 'system-params-config',
+    icon: 'easel',
+    title: '系统参数配置',
+    meta: {
+        title: '系统参数配置'
+    },
+    name: 'system-params-config',
+    component: () =>
+        import('_v/system-params-config.vue')
+},{
+  path: 'tenant-project-config',
+  icon: 'easel',
+  title: '项目配置',
+  meta: {
+      title: '项目配置'
+  },
+  name: 'tenant-project-config',
+  component: () =>
+      import('_v/tenant-project-config.vue')
+}]
 }];
 
 let routes = [...otherRouter, ...appRouter];
